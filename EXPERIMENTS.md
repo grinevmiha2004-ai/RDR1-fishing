@@ -188,3 +188,16 @@ Portable scheduler tests, all ten catalog names, SDK/native exports/imports,
 source rebuild byte comparison, ZIP CRC passed. No in-game validation here.
 Main confirmed baseline0.1.62 remains unchanged. Incomplete FX collector draft
 was unnecessary once user uploaded vfx.rpf; not distributed.
+
+## 0.1.78 — selected fish-size splash effects
+
+User confirmed v0.1.77 previews: key1 for normal fish, key4 for small fish,
+key8 for large fish. Bound to game.weight using exact model category thresholds:
+<1kg bullet_water; 1–5kg inclusive ped_water_thrash; >5kg amb_water_rocksplash_2.
+Automatic burst at struggle onset, same scale1/lifetime1.5s as0.1.77 automatic.
+Removed numeric/T/Y/Backspace preview inputs and preview HUD. Immediately stop
+on leaving Fight; owned emitter/layout cleanup preserved. Audio and fish motion
+unchanged. Tests cover weight boundaries, repeated pulling, rest/restart and
+zero-delta pause. SDK/catalog validation, ZIP CRC, identical source rebuild pass.
+Game execution is unavailable in cloud; integrated mapping awaits user check.
+Confirmed main baseline0.1.62 retained; v0.1.77 test archive retained for rollback.
