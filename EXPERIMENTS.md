@@ -103,3 +103,7 @@ swing AnimationTrack 0x9404C / 0x94428 поле файла +0x1C равно 1, �
 ## Основная подтверждённая версия0.1.62
 
 Пользователь: «Замечательно! Просто отлично! Теперь это наша основная версия, запомни ее и обнови память». База0.1.62, коммит586903e, тег baseline-v0.1.62. Подтверждены автоматические категории50/30/20%, веса0.40..0.99/1..5/5.01..10кг, масштабы0.5/1/2 и вертикальная пойманная рыба, прежний хват и анимации сохранены. Архивы не перезаписывать; будущие эксперименты отдельно. Предыдущие основные теги сохранены.
+
+## Reel audio: local RPF audio table collector v0.1
+
+User requires playing existing game sound0x01B4B46C from sfx.awc; embedded WAV alternative is not authorized. MagicRDR export fails with Zstandard unknown frame descriptor. Prepared separate Windows x64 RDR-AudioTables-Extractor-v0.1.zip: opens selected3GB archive read-only, reads/decrypts RPF6 TOC, selects config sounds/game tables by JOAAT basename hashes, collects stored bytes and flags/offsets into small ZIP. No decompression needed on user PC, no automatic upload, no game-file modifications. Tested parser on1352-entry reference RPF,64-bit offsets beyond2GB and independent ZIP extraction/CRC. Windows binary compiled but not run here; actual user audio RPF not available. Await generated RDR_AudioTables_*.zip to resolve native audio event. Draft mod0.1.63 with embedded WAV remains local/unpublished and must not be distributed as solution to native audio request. Main confirmed baseline0.1.62 unchanged.
