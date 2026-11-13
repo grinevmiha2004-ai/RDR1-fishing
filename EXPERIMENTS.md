@@ -201,3 +201,11 @@ unchanged. Tests cover weight boundaries, repeated pulling, rest/restart and
 zero-delta pause. SDK/catalog validation, ZIP CRC, identical source rebuild pass.
 Game execution is unavailable in cloud; integrated mapping awaits user check.
 Confirmed main baseline0.1.62 retained; v0.1.77 test archive retained for rollback.
+
+
+## Подтверждённая основная версия0.1.78
+
+Пользователь прямо подтвердил0.1.78 как новую основную рабочую версию.
+Коммит сборки caf7135, постоянный тег baseline-v0.1.78. Архивы неизменны.
+Дальнейшие эксперименты выпускать отдельно, не перезаписывать базу/тег.
+WORKING_BASELINE.md обновлён, предыдущие базы и теги сохранены.
