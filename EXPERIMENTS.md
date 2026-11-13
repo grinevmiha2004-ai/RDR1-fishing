@@ -170,3 +170,21 @@ User requires playing existing game sound0x01B4B46C from sfx.awc; embedded WAV a
 
 Пользователь подтвердил, чтоMENUне отключается всплеском,CHANNELотключается; на одном клипе бывают серии громко/тихо. Найдено значимое различие вEXE: обычный PLAY_SOUND_FRONTEND/E33810 вычисляет gain=(contextScalar-1)*45; INITPARAMS/E33910 берёт явныйfloat0 из входной структуры. Катушка переведена на49053A94(event,28byteparams), gain0dB, остальные поля нули; без записи глобальной громкости/микшера/OS. Обычные master-регуляторы downstreamсохраняются. Это подтверждённое изменение параметров запуска, не доказательство устранения всех слышимых перепадов. MENU/RNGпятисэмплов/повторы/160мс сохранены; тестовые1–8/CHANNEL убраны.\n
 Вторая просьба — сильнее рыба/удочка при вырывании. FightMotionсинхроненfishPulling: вход.18с/выход.28с, rodPitchдо8°,rollдо6°, общийконецснасти sideдо14см,yдо8см, defaultfishflutterдо28°. Поплавок/крючок/рыба двигаются вместе, леска остаётся соединённой; рыбийyaw/вес/размеры/хват/коллизии/камера/Caughtverticalне меняются. Дляcustommouthoffsetсохраняется запретflutter, но endpointдвижение работает. Пользователю уточнено: фиксируется только относительный gain щелчка, не общая громкость игры/Windows/колонок. Проверки ABI/структур/динамическогоvsявногоgain, ограниченийдвижения и идентичная пересборка пройдены. В игре новаясборка не запускалась. Основная0.1.62 сохранена.
+
+## 0.1.77 — RDR1 water splash preview
+
+Built from0.1.76. Ten confirmed names from user's vfx.rpf (SHA256
+40b2616bf50396d1706b005af82ffd3d1606a95cb2fdaf8f4f7e0073351e9932),
+vfx/rdr2_core.fxlist: ped_water_thrash, ped_water_wade, ped_water_entry,
+bullet_water, amb_splash, amb_water_splash, amb_water_rocksplash,
+amb_water_rocksplash_2, anim_water_toss, wagon_water_wade.
+Keys1–0 choose/preview after a cast; T replay, Y toggle automatic at pull onset,
+Backspace stop/disable automatic. HUD labels choice; log records native START
+result and surface coordinates. Manual preview capped3s, auto1.5s, one owned
+emitter; manual cooldown protects preview from auto overwrite. Cleanup only
+owned emitter/layout, no global FX reset. Native packed vector ABI checked in
+user EXE; START vector is Euler rotation, CREATE vector is position.
+Portable scheduler tests, all ten catalog names, SDK/native exports/imports,
+source rebuild byte comparison, ZIP CRC passed. No in-game validation here.
+Main confirmed baseline0.1.62 remains unchanged. Incomplete FX collector draft
+was unnecessary once user uploaded vfx.rpf; not distributed.
