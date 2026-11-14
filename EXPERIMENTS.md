@@ -244,3 +244,17 @@ owned sessions/props only. Preview keys removed; main baseline0.1.78 untouched.
 Tests cover indefinite choice, cue mapping, phase gate, pause, one impact/exact
 flight endpoints, native task args. Catalog/nativeSDK/audio mapping validations,
 ZIP CRC and byte-identical source rebuild passed; game unavailable in cloud.
+
+## 0.1.81 — fish release missing-startup recovery
+
+User0.1.80 log: seven requests, four impacts, three Hand-stage6s failures. Old
+log has no playing/time samples, so exact failure cause (missing versus stalled
+playback) is not proven; generic cast progress fields were not updated on release.
+Add Bound frame between animset bind and task request, then at most two startup
+retries only while no native playing has ever been observed. Scoped ownership
+checked before retry; no replay of an observed clip. Three missing requests fail
+boundedly preserving catch. Require0.25s query gap before natural-end decision.
+Add stage/playing/phase/age/seen/attempt logs every0.2s. No phase/flight/audio changes.
+Tests cover absent start/recovery, pause, no replay after match, finite retry cap.
+SDK compatibility, ZIP CRC, identical source rebuild passed. Runtime fix awaits
+user validation; baseline0.1.78 unchanged.
