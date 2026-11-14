@@ -416,3 +416,23 @@ Tests cover2s cap,1/5kg interval boundaries, cadence ordering, empty pause/Q sto
 bite during reeling, continuity and complete empty return/no catch.500 seeded
 catches, SDK validation, ZIPCRC/reproducible rebuild pass. Runtime sound/visual
 validation awaits user. Main confirmed baseline0.1.88 retained.
+
+## 0.1.91 — tension/payout redesign, release orientation and bite cues
+
+User requests1.7s charge; release head toward water; R only raises tension during
+fish bursts, rate by size; no passive tension reset; Q pays line out with two
+removed clicks; bite gets same struggle water effects/audio.
+Charge divisor/cap1.7. Release-only yaw+180 from prior, verified head(-X) dot
+forward at four cardinals; swim yaw untouched. Tension gain R&&pulling small.10,
+normal.20,large.30/s. Idle/no-pull holds; Q priority reduces.30/s and progress.04/s.
+No passive progress drift, tension0 no longer loses catch; tension1 breaks line.
+Payout scheduler.22s on Q uses only DPAD_02/0FEF10E1 and NAV_01/0B2CA65B, same
+MENU_INITPARAMS gain0, independent five forward clips. Gated to actual release
+work using before-step tension/progress. Dat20 mappings verified read-only.
+Bite onset triggers one existing Struggle cue and size splash at current bobber;
+continuous Bite->Fight pull-state avoids immediate duplicate. Hook preserves cue
+and ages emitter; later fight bursts unchanged. Retrieve cancels cues as before.
+Invariant tests cover idle hold/rest reel/size slopes/Q rollback, zero slack,
+power1.7, head orientation, payout selection, bite cue edges.500 adaptive catches
+pass with budget192s (large fish slower than old48s budget). SDK/audio mappings,
+ZIPCRC/reproducible rebuild pass. No game runtime; baseline0.1.88 retained.
