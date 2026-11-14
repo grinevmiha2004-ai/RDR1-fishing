@@ -531,3 +531,32 @@ byte-identical rebuild pass. No cloud game execution; confirmed main baseline
 Final follow-up before handing over .95: random bite wait7..15 seconds, replacing
 4..10.1000 random rolls validate bounds/end coverage;500 catch regressions and
 clean-source identical rebuild pass. Same .95 archives updated before final link.
+
+## 0.1.96 — quiet HUD, random rests, rebindable keys, caught prompts/grip (2026-11-15)
+
+Remove persistent upper-left fishing status and tension/progress gauge; native
+honor/money notifications and existing money receipt preserved. Caught choices
+only lower-right: outlined Russian Sell/Release captions with keycaps showing
+actual Keep/Release INI values; hide while acting. RedHook font1 Hapna selected
+for Cyrillic (embedded Hapna TTF checked for glyph coverage). Draws styled after
+user reference; no unsafe overwrite of native unchecked prompt slots. Requires
+in-game visual check of font/layout, not claimed runtime verified here.
+
+FishStruggle now per-fight state. Each burst end samples a fresh uniform rest
+3..4s, burst3.2s unchanged; pause holds clock and RNG. One authoritative bool for
+tension, fish/rod motion, water audio, splashes. Test extremes/no per-frame reroll,
+>100 varied windows, pause, calm reeling, cues; existing500 catches still pass.
+
+All9 controls from [Keys]: Toggle,Spin,Cast,Hook,Reel,Ease,Retrieve,Keep,Release.
+Separate cast/hook edge detection. Existing INI gains missing entries with one-
+time LayoutVersion2 migration, preserving other data; stale default R/Q migrates
+to current Space/Shift, subsequent rebindings honored. Action legacy replaced
+by Cast/Hook. Static check covers all9 INI fields and all9 polling variables;
+context sharing allowed; simultaneous actions should use distinct keys.
+Unicode key labels, explicit mouse names. F8/F9 reserved as before.
+
+Caught fish moved3cm toward fingers (screen-right in supplied front view) and
+4cm down, rotating offset with actor heading; no change underwater or throw arc.
+Four-cardinal grip projection checks pass. Placement needs user's visual check.
+68 SDK natives,11 loader exports, prior ABI/weapon checks, ZIP CRC and clean-
+source byte-identical rebuild pass. User-confirmed baseline0.1.88 preserved.
