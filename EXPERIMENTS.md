@@ -276,3 +276,18 @@ Portable page/index/resource ownership mapping tests and SDK validation pass;
 all20 asset hash->source mappings verified by verify_item_preview.py. ZIP CRC,
 byte-identical source rebuild pass. Game visual validation remains with user.
 Fishing/release/audio unchanged. Confirmed main baseline0.1.78 remains intact.
+
+## 0.1.83 — preserved chosen stow, additional bag-reach candidates
+
+User chose0.1.82 page1/key6 as future stow: dyn_base/nor_dyn_stn_hls. Durable
+CONFIRMED_ITEM_ANIMATIONS.md records exact key/set/source; page1 unchanged.
+Not integrated into normal rod removal yet. User rejected all previous draws
+as too short, wanted real reaching into bag. Confirmed lasso draw/post are
+~0.333s resource segments. No artificial slowdown or claim they are new clips.
+Replaced page2 with bandana pre/post, player give_money, standing lantern draw
+(NPC Gped source explicitly labelled), lasso left/right/front-left/front-right
+storage preparation, long holster post shared pistol source, dynamite preparation.
+These are candidates, not all literal takeout animations. Desired draw remains
+unconfirmed. Verified all20 real runtime hash/source pairs, including alias and
+mission source exceptions; tests/SDK validation/ZIPCRC/reproducible rebuild pass.
+Main baseline0.1.78 unchanged. No game runtime visual validation in cloud.
