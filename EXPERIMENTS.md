@@ -382,3 +382,19 @@ Manual retrieval4 and previous item lifecycle unchanged; main baseline0.1.78 int
 WORKING_BASELINE.md, CONFIRMED_ANIMATION.md и CONFIRMED_ITEM_ANIMATIONS.md.
 Архивы не изменены;0.1.78 и остальные предыдущие базы/теги сохранены.
 Следующие эксперименты выпускать отдельно от этой подтверждённой базы.
+
+## 0.1.89 — spin-charge distance and fish-size reel speed
+
+User requests hold time affects cast, maximum at3+s; small faster/normal same/
+large slower, then explicitly says large<=0.5. Implement1.5/1.0/0.5 by existing
+weight thresholds<1/1..5/>5. Only R&&!Q positive progress multiplied; tension,
+negative progress drift, probabilities/scales and animation rates unchanged.
+CastCharge tracks unpaused active hold seconds capped3; raw per-frame elapsed
+used for charging rather than simulation .1 clamp so3s works at low FPS. First
+keydown excludes previous interval. Distance3+(CastDistance-3)*clamp(seconds/3).
+Existing INI CastDistance preserved as maximum3..20, default9: tap3m,1.5s6m,3+s9m.
+HUD shows power/distance. Release latches distance and camera; existing validated
+water search shortens only, down to3m; flight duration from actual water target.
+Tests cover monotonic charge/min/max/custom max, pause/cancel/latch, reel weight
+boundaries, unchanged tension/ease, all500 seeded catches. SDK/ZIPCRC/source rebuild
+byte comparison pass. Game not run in cloud. Main baseline0.1.88 unchanged.
