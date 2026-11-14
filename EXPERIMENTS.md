@@ -291,3 +291,23 @@ These are candidates, not all literal takeout animations. Desired draw remains
 unconfirmed. Verified all20 real runtime hash/source pairs, including alias and
 mission source exceptions; tests/SDK validation/ZIPCRC/reproducible rebuild pass.
 Main baseline0.1.78 unchanged. No game runtime visual validation in cloud.
+
+## 0.1.84 — integrated catch hands and user-specified item sequences
+
+Use numbers from0.1.83 (NOT0.1.82): small keep page1/3, normal1/4, large1/6;
+recover after release page2/0; equip page2/0 then2/4; stow page1/9.
+Exact mappings recorded in CONFIRMED_ITEM_ANIMATIONS.md and source ItemSequence.
+On Fight->Caught, rod attachment moves left, fish anchors to right wrist using
+confirmed vertical fishHang transform. Keep .65 phase removes fish once, records
+kept count, restores pole right; catchResolved prevents respawn. Release retains
+.48 underhand detach/flight/impact008CE18D; afterwards Recover plays then transfers
+rod right at.65. Equip creates no tackle props until second animation.45; stow
+removes props at.65 then cleans session after native clip completion. Phase values
+are initial synchronization choices, not user-validated bag contact frames.
+Generic scoped sequence controller uses known Bound frame and missing-only startup
+recovery. No numeric/F7/Backspace previews. F6 while active sequence/release is
+immediate cancel; otherwise normal animation stow. Camera remains free. Choice
+waits for user; pre-store failure preserves catch, committed store never duplicates.
+Portable tests cover exact clip keys, weight1/5 boundaries, equip ordering, event
+single-fire/reset; SDK and20 original asset mappings verified. ZIP CRC and identical
+source rebuild pass. No in-game cloud validation; baseline0.1.78 retained unchanged.
