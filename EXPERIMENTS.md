@@ -527,3 +527,7 @@ adaptive500 catches still pass. Cast max10m after user corrected19 typo; default
 68 SDK hashes,11 exact RedHook exports; ABI/weapon checks, ZIP CRC, clean-source
 byte-identical rebuild pass. No cloud game execution; confirmed main baseline
 0.1.88 preserved, new UI/rhythm await user validation.
+
+Final follow-up before handing over .95: random bite wait7..15 seconds, replacing
+4..10.1000 random rolls validate bounds/end coverage;500 catch regressions and
+clean-source identical rebuild pass. Same .95 archives updated before final link.
