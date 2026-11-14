@@ -398,3 +398,21 @@ water search shortens only, down to3m; flight duration from actual water target.
 Tests cover monotonic charge/min/max/custom max, pause/cancel/latch, reel weight
 boundaries, unchanged tension/ease, all500 seeded catches. SDK/ZIPCRC/source rebuild
 byte comparison pass. Game not run in cloud. Main baseline0.1.88 unchanged.
+
+## 0.1.90 — 2-second charge, variable reel cadence and slow empty reeling
+
+User requests max spin2s, size click cadence, slow R reel during Wait. Explicit
+follow-up sets small0.12s and normal0.18s; large0.32 and empty0.70 retained.
+Charge cap/divisor2. Existing reel progress1.5/1/.5 remains. Scheduler supports
+interval per call, keeps remainder for average cadence, never emits bursts.
+Same explicit gain0 MENU path/five random samples and water isolation unchanged.
+Wait R&&!Q adds emptyReeled0.10m/s capped actualCastRange-2; wait timer still runs,
+Bite stops empty reeling. Geometry shifts Wait/Bite/Fight start consistently so
+hooking doesn't teleport tackle back out. Fully empty reel ->Ready without catch.
+Ready cast resets empty distance; tension and fight progress separate. HUD adds
+slow-reel hint, runtime log includes click interval/state. No mesh spool animation
+added; sound cadence and actual bobber/hook retrieval implement slow reel action.
+Tests cover2s cap,1/5kg interval boundaries, cadence ordering, empty pause/Q stop,
+bite during reeling, continuity and complete empty return/no catch.500 seeded
+catches, SDK validation, ZIPCRC/reproducible rebuild pass. Runtime sound/visual
+validation awaits user. Main confirmed baseline0.1.88 retained.
