@@ -612,3 +612,13 @@ byte-identical rebuild pass. Old exe-specific verifier scripts are historical
 1.0.40 checks, explicitly documented; use new friend verifier for this target.
 Live1.0.42 execution/reward persistence require friend's runtime test; no RDR
 runtime in workspace. No change to user's baseline or original .97 archives.
+
+## User-confirmed working baseline: original0.1.97, not friend's port (2026-11-15)
+
+User explicitly selected exact original archive at commit6684c62 as primary.
+Canonical WORKING_BASELINE.md updated to0.1.97 for RDR1.0.40.49078035; current
+controls/mechanics/UI/rewards documented, superseding stale0.1.88 controls.
+Tag baseline-v0.1.97 points to build commit6684c62, not friend's72f49a3.
+Original binary/source archives kept byte-for-byte, SHA256 recorded. Separate
+-RDR-1.0.42 port remains separate and is NOT the baseline. Previous tags/archives
+including baseline-v0.1.88 retained. Future experiments start from original.97.
