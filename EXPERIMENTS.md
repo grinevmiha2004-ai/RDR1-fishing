@@ -209,3 +209,19 @@ Confirmed main baseline0.1.62 retained; v0.1.77 test archive retained for rollba
 Коммит сборки caf7135, постоянный тег baseline-v0.1.78. Архивы неизменны.
 Дальнейшие эксперименты выпускать отдельно, не перезаписывать базу/тег.
 WORKING_BASELINE.md обновлён, предыдущие базы и теги сохранены.
+
+## 0.1.79 — underhand molotov preview, based on0.1.78
+
+Removed008CE18D from Landing, leaving014E76D5. Metadata of removed sample retained.
+Preview: F6 then1 standing underhand;2–9 eight directional moving underhand
+variants;0 normal standing comparison; Backspace cancel. Ready/Caught/Lost only,
+mini-game frozen during preview; camera remains free. Existing fishing casts
+unchanged. Positive rate1, forced loopfalse, timer-1, no seeking/frame freeze;
+ends after observed native playback completion, with30s runaway safeguard.
+Runtime keys individually verified via actual dyn.was hash records and source
+names. Unsuffixed run WAT track is a directional container, not a playable key;
+use suffixed actual runtime entries. dyn.was contains MOLOTOV_THROW_DYNAMIC.
+Tool verify_throw_preview.py documents all10 hash->source mappings and assetSHA.
+Portable task argument and Landing exclusion tests pass, SDK/nativeABI checks
+pass; source ZIP rebuild byte-identical, both ZIP CRC verified. RDR unavailable
+in cloud; visual suitability awaits user. Baseline0.1.78 untouched.
