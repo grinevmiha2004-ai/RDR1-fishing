@@ -560,3 +560,29 @@ Caught fish moved3cm toward fingers (screen-right in supplied front view) and
 Four-cardinal grip projection checks pass. Placement needs user's visual check.
 68 SDK natives,11 loader exports, prior ABI/weapon checks, ZIP CRC and clean-
 source byte-identical rebuild pass. User-confirmed baseline0.1.88 preserved.
+
+## 0.1.97 — English/Russian UI, catch details, immediate recovery (2026-11-15)
+
+User reports .96 Cyrillic question marks and delayed recast after escape; asks
+loss notice top-left, fish size/weight above caught prompts, then en/ru selection
+in INI. English default via [UI]Language=en, ru optional; missing field added to
+existing INI without overwriting settings/counters. Localize captions, categories,
+weight/loss notice. ASCII uses known working RedHook font0. Cyrillic bypasses
+incomplete baked font atlas via checked Windows Unicode font ->per-glyph alpha
+BMP V4 ->RedHook LoadImage/DrawImage, with reusable glyph cache and temporary
+files deleted after synchronous load. GDI32 Windows system dependency only;
+no bundled fonts or extra assets. English fallback on failure avoids ? and logs
+reason. Actual RU game rendering requires user visual test; not runtime-claimed.
+Image API .8 verified statically: failure sentinel UINT64_MAX (zero valid),
+center coordinates, in-memory decoding, requested RGBA. BMP alpha/outline/rows
+verified independently with Pillow. Localization/category/encoder unit tests pass.
+
+Remove Lost4s wait and first-click-consuming recovery. On failure clear our
+fish/pose/audio state and immediately recover Ready, retaining rod/session and
+weapon lock; next new press casts/spins immediately. Localized3s notice isn't a
+cooldown. Broken-line/missed-bite ->first-click Cast and idempotence tests pass.
+Caught summary above buttons displays actual category (<1/1..5/>5) and2-decimal
+kg, localized; no tension/progress. Existing9 remappable controls,3..4s random
+calm,7..15s bite,10m max and honor/cash rewards preserved.
+68 natives,13 exact loader exports, system DLLs only; prior500 catches, resource
+checks, ZIP CRC and clean-source byte-identical rebuild pass. Baseline0.1.88 intact.
