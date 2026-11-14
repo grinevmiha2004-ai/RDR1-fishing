@@ -360,3 +360,16 @@ recorded in CONFIRMED_ITEM_ANIMATIONS.md. Portable tests cover allowed phases,
 indices/source keys, single retrieve commit/no hook commit, retract endpoints.
 SDK/asset checks, ZIPCRC/reproducible rebuild pass; game runtime visual validation
 awaits user. Main baseline0.1.78 remains unchanged.
+
+## 0.1.88 — fast hook-to-fight transition
+
+User confirms0.1.87 but requests no neutral standing pause after hook. At hook
+phase0.72, once fight set loaded, verify actor/session ownership and bind lso_base
+while preserving active hook task. Only clear owned override flag1 if necessary;
+base gent path needs no clear. Mark FightPose owned/Bound and request next frame
+with0.18s blend instead of0.65s. Bypass normal-end0.25s wait and setup frames.
+Fight set pre-requested at hook begin; .5238 hold and natural advancement unchanged.
+Default blend retained for unrelated requests. Existing natural-end fallback if
+fast handoff unavailable. Tests cover Hook-only gate and fast blend ABI. SDK,
+ZIPCRC/reproducible build checks passed. Visual transition awaits user in game.
+Manual retrieval4 and previous item lifecycle unchanged; main baseline0.1.78 intact.
