@@ -325,3 +325,20 @@ No changes to weight thresholds, clip selection, release0.48 or impact sound.
 Tests cover Equip-only step0 overlap and earlier single-fire thresholds; SDK,
 ZIP CRC and byte-identical source rebuild pass. Actual bag-contact alignment
 requires user runtime check; confirmed baseline0.1.78 remains unchanged.
+
+## 0.1.86 — single draw animation and recast candidate preview
+
+User removes first preparatory draw clip: Equip now only index13 ltn_base/
+nor_ltn_stn_drw, pole appears at0.45 of that sole clip. No overlap/preparation.
+Ten per-key lasso pull-in/tug/throw outcome clips, verified in supplied WAS by
+verify_recast_preview.py.1 standing pulin,2 failed standing throw,3 high failed
+throw,4 successful throw outcome,5 short standing tug,6 long standing tug,
+7 standing pull,8 forward tug walk,9 backward tug walk,0 full grounded-target pull.
+Numeric preview in Ready/Wait/Bite/Caught/Lost, no active Equip/Stow/Keep/Recover,
+release or Fight; gameplay clock paused during test. Backspace cancel, F6 cleanup.
+No cyclic playback/frame freeze; bounded missing-only startup retry and30s watchdog.
+Digit0 is the full main fight source, without .5238 hold. Test previews movements
+only; actual recast mechanic intentionally awaits user's clip selection.
+Weight/keep/release/stow and0.1.85 earlier contact timings retained. SDK validation,
+10 real clip source mappings, portable tests, ZIPCRC/reproducible rebuild passed.
+No cloud game runtime. Main confirmed baseline0.1.78 remains unchanged.
