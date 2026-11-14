@@ -506,3 +506,24 @@ refresh safely checks readiness itself. No other mechanic/control/weapon change.
 Portable regression suite, SDK/native ABI/weapon flag static checks, ZIP CRC,
 clean-source reproducible build pass. Actual reward outcomes/save-load still
 await user test; no RDR runtime available in workspace. Baseline0.1.88 preserved.
+
+## 0.1.95 — native honor HUD, longer calm windows, 10m casts (2026-11-15)
+
+User's .94 logs confirm honor at cap5000 ->5000 delta0; subsequent trainer test
+4950 ->4955 delta5. Thus actual +5 works; missing native presentation addressed
+with SET_STAT_MESSAGE 73DA6AF1, game sn_hnrr label/hash AFA3172F, actual delta,
+3s, type2/honor selector0 following game's stat-popup pattern. Existing native
+honor value refresh precedes HUD notification. No custom honor meter; own help/
+corner honor text removed per user's explicit correction. Capped gains produce
+no fake increase or raw cache write. Native HUD appearance requires visual test.
+
+Burst duration3.2s unchanged; calm window1.6 ->4.8s (8s cycle). Shared fishPulling
+helper drives tension/motion/water audio/VFX/HUD; old duplicate HUD clock removed.
+Tests cover complete calm reel interval without added tension, burst boundaries,
+no water struggle sound during extended rest and next burst at8s. Existing
+adaptive500 catches still pass. Cast max10m after user corrected19 typo; default
+10 and old INI default9 mapped10 without replacing file/counters; upper bound10.
+1.7s full charge retained; 0/.85/1.7s ->3/6.5/10m verified.
+68 SDK hashes,11 exact RedHook exports; ABI/weapon checks, ZIP CRC, clean-source
+byte-identical rebuild pass. No cloud game execution; confirmed main baseline
+0.1.88 preserved, new UI/rhythm await user validation.
