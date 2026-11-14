@@ -436,3 +436,37 @@ Invariant tests cover idle hold/rest reel/size slopes/Q rollback, zero slack,
 power1.7, head orientation, payout selection, bite cue edges.500 adaptive catches
 pass with budget192s (large fish slower than old48s budget). SDK/audio mappings,
 ZIPCRC/reproducible rebuild pass. No game runtime; baseline0.1.88 retained.
+
+## 0.1.92 — RedHook-only game rewards and requested mouse controls (2026-11-15)
+
+RMB hold spins with free camera; LMB commits cast, including minimum-range direct
+LMB without spin. Releasing RMB before LMB cancels to Ready/right hand. Existing
+1.7s maximum charge remains. LMB hooks, Space reels, Shift pays out. E retrieves
+tackle during Wait/Bite/Fight; caught E sells, F releases. Caught mouse clicks
+cannot bypass the decision. Fixed layout supersedes legacy INI E/R/Q while
+preserving Toggle and saved counters. Game FIRE/TARGET/JUMP/SPRINT actions scoped
+through RH_ActionDisable, restored on cleanup/detach; camera axes untouched.
+
+Actual game stat reward implementation uses RedHook GetGlobalPtr and known
+Global_54086 8-byte entries in raw buffer (cash0, honor1). Guards exact supplied
+EXE profile/fingerprints, writable pages, finite/range values, table header and
+honor equality with independently resolved actor cache. Writes four-byte float,
+reads back; cash UI/PRINT_MONEY refreshed; honor cache native uses correct
+(playerSlot,float) signature, not broken one-float SDK declaration. Honor +5,
+clamped +/-5000, at release impact. Sale round(weight*10), with cent-based tie
+rounding (.95 ->10), at animation disappearance. Once-only catch latch; failed
+preflight or write retains fish for retry and logs reason. Runtime log includes
+actual before/after/delta; ordinary game save persistence awaits in-game test.
+
+Uploaded Rampage honor routine reverse engineered: DECOR_SET_INT honor/honorAward
+on temp actor followed by KILL_ACTOR_WITH_KILLER and RELEASE_ACTOR; all natives
+available in RedHook, but kill approach not used to avoid kill-side effects.
+Stat layout independently cross-referenced public DoctorSpechemen/RDR-AP.
+No ScriptHookRDR dependency, no bundled assets or external audio.
+
+Portable tests: mouse confirm/cancel incl simultaneous release, 961 two-decimal
+prices, honor cap, failed/repeated reward transactions, prior 500 simulated
+catches and mechanics. Static native ABI/cache/action-name checks, 65 SDK hashes,
+11 loader exports, system DLL dependencies only. ZIP CRC and clean-source
+byte-identical rebuild pass. RDR not run here; new rewards and save/load behavior
+are not runtime-confirmed. Confirmed baseline 0.1.88 is preserved unchanged.
