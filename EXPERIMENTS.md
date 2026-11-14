@@ -225,3 +225,22 @@ Tool verify_throw_preview.py documents all10 hash->source mappings and assetSHA.
 Portable task argument and Landing exclusion tests pass, SDK/nativeABI checks
 pass; source ZIP rebuild byte-identical, both ZIP CRC verified. RDR unavailable
 in cloud; visual suitability awaits user. Baseline0.1.78 untouched.
+
+## 0.1.80 — keep/release catch, underhand throw and impact sound
+
+User confirmed0.1.79 key1. Use dyn/nor_dyn_stn_for_mid_und_trw, nonloop/rate1.
+Caught waits indefinitely for Action(E) keep or Ease(Q) release. Total catches
+still includes released fish, separate Progress/Kept and Released decision counts.
+Keep records mod statistics; game inventory item integration is not implemented.
+Release temporarily holds rod at wrist_l, transfers fish from hook to right wrist,
+then detaches at initial normalized phase0.48 and flies a1.2m-lift parabolic path
+to the existing verified water surface. Preserve scale; remove fish at impact.
+Release cue always008CE18D with existing -6dB gain, isolated fourth owned water
+sound slot; Landing remains only014E76D5. Size-specific splash at impact retains
+its1.5s tail after returning to Ready. No early fake sound on button press.
+Release sync phase and left-hand rod placement await in-game visual validation.
+Failure before detach preserves caught fish and choice. Cancel/player loss clean
+owned sessions/props only. Preview keys removed; main baseline0.1.78 untouched.
+Tests cover indefinite choice, cue mapping, phase gate, pause, one impact/exact
+flight endpoints, native task args. Catalog/nativeSDK/audio mapping validations,
+ZIP CRC and byte-identical source rebuild passed; game unavailable in cloud.
