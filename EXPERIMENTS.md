@@ -373,3 +373,12 @@ Default blend retained for unrelated requests. Existing natural-end fallback if
 fast handoff unavailable. Tests cover Hook-only gate and fast blend ABI. SDK,
 ZIPCRC/reproducible build checks passed. Visual transition awaits user in game.
 Manual retrieval4 and previous item lifecycle unchanged; main baseline0.1.78 intact.
+
+
+## Основная рабочая версия0.1.88 — подтверждена пользователем
+
+После проверки быстрого перехода подсечки в вываживание пользователь явно
+назначил0.1.88 основной. Коммит сборки2e8f0d7, тег baseline-v0.1.88. Обновлены
+WORKING_BASELINE.md, CONFIRMED_ANIMATION.md и CONFIRMED_ITEM_ANIMATIONS.md.
+Архивы не изменены;0.1.78 и остальные предыдущие базы/теги сохранены.
+Следующие эксперименты выпускать отдельно от этой подтверждённой базы.
