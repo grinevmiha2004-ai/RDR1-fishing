@@ -311,3 +311,17 @@ waits for user; pre-store failure preserves catch, committed store never duplica
 Portable tests cover exact clip keys, weight1/5 boundaries, equip ordering, event
 single-fire/reset; SDK and20 original asset mappings verified. ZIP CRC and identical
 source rebuild pass. No in-game cloud validation; baseline0.1.78 retained unchanged.
+
+## 0.1.85 — earlier hand/contact events and overlapping rod draw
+
+User says0.1.84 works; requests no long gap before draw step2, earlier pole
+removal at bag contact, earlier pole transfer so returning hand already holds it.
+Preload all sequence sets at begin. Switch Equip step0->1 at phase0.80 while
+still playing if step2 is loaded, bypass natural-end wait0.25s; preserve short
+Bound/request frame separation for reliable startup. Natural-end fallback if
+streaming is not ready. Stow disappearance0.65->0.30; Keep fish removal+rod-right
+and Recover rod-right0.65->0.45. Equip appearance0.45 of second clip unchanged.
+No changes to weight thresholds, clip selection, release0.48 or impact sound.
+Tests cover Equip-only step0 overlap and earlier single-fire thresholds; SDK,
+ZIP CRC and byte-identical source rebuild pass. Actual bag-contact alignment
+requires user runtime check; confirmed baseline0.1.78 remains unchanged.
