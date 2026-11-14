@@ -258,3 +258,21 @@ Add stage/playing/phase/age/seen/attempt logs every0.2s. No phase/flight/audio c
 Tests cover absent start/recovery, pause, no replay after match, finite retry cap.
 SDK compatibility, ZIP CRC, identical source rebuild passed. Runtime fix awaits
 user validation; baseline0.1.78 unchanged.
+
+## 0.1.82 — standing item draw/stow preview
+
+User confirmed0.1.81 release fix works, then requested lasso/item draw/stow clips
+while standing. Twenty mapped runtime hash/source pairs from animationres.rpf:
+page1 keys1–4 lasso draw/post/stowpre/stow,5–6 bottle/dynamite draw/stow,
+7–8 throwing knife draw/stow,9–0 binocular takeout/putaway. F7 switches page;
+page2 keys1–4 pistol draw/post/stowpre/stow,5–7 rifle draw/post/stowpre,
+8–0 full inventory use actions bottle/medicine/bait (not pure draw/stow).
+Only standing sources, no mounted/run clips. No weapon/item props spawned or
+inventory modified by preview. Digits play/replay, Backspace cancel, F6 cleanup.
+Ready/Caught/Lost only, not during release; minigame suspended, camera free.
+Scoped bind, one-frame Bound barrier, missing-only bounded startup recovery;
+natural rate1/nonloop/timer-1, no seek/freeze. Per-set unique streaming request.
+Portable page/index/resource ownership mapping tests and SDK validation pass;
+all20 asset hash->source mappings verified by verify_item_preview.py. ZIP CRC,
+byte-identical source rebuild pass. Game visual validation remains with user.
+Fishing/release/audio unchanged. Confirmed main baseline0.1.78 remains intact.
