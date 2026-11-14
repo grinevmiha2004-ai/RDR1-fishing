@@ -490,3 +490,19 @@ existing foreign mode, repeated cleanup, actor switch, unreadable state; prior
 mechanics/catch tests still pass. 67 SDK natives, 11 exact loader exports;
 ZIP CRC and clean-source byte-identical rebuild pass. In-game verification
 awaits user. Confirmed baseline0.1.88 preserved.
+
+## 0.1.94 — unblock sale/release from supplied failure log (2026-11-15)
+
+User log .93: forceHolstered=1 readback confirmed; every reward rejected at
+`honor table/cache mismatch or player not ready`. All prior profile/table/range/
+writability gates had passed. Remove the combined optional native/HUD cache
+eligibility gate, which wrongly blocked both money and honor decisions. Preserve
+actual persistent stat write/readback and all earlier guards. Cache remains
+read-only diagnostic: readiness/readability/cacheHonor plus actual cash/honor
+now logged separately at preflight. No invented success on failed write.
+Independent Rampage honor getter reads Global54086+10 hex and cash getter+08,
+confirming stat entry layout already cross-referenced from RDR-AP. Native cache
+refresh safely checks readiness itself. No other mechanic/control/weapon change.
+Portable regression suite, SDK/native ABI/weapon flag static checks, ZIP CRC,
+clean-source reproducible build pass. Actual reward outcomes/save-load still
+await user test; no RDR runtime available in workspace. Baseline0.1.88 preserved.
