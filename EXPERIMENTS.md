@@ -586,3 +586,29 @@ kg, localized; no tension/progress. Existing9 remappable controls,3..4s random
 calm,7..15s bite,10m max and honor/cash rewards preserved.
 68 natives,13 exact loader exports, system DLLs only; prior500 catches, resource
 checks, ZIP CRC and clean-source byte-identical rebuild pass. Baseline0.1.88 intact.
+
+## Fishing0.1.97 separate port — friend's RDR1.0.42.49788435 (2026-11-15)
+
+User supplied RDR(1).zip containing RDR.exe SHA256
+cc27983d9b9183ad32bf9f12d234a3b76ced27d32cce054279895d65e765b2c5,
+PE timestamp673783F3/image5A5EC600. Original .97 for1.0.40.49078035 unchanged.
+Separate -RDR-1.0.42 binary/source archives; no game executable bundled.
+
+21 RVA mappings derived individually from normalized instruction matches,
+RIP-referenced globals and paired matrix vtable slots (not blanket delta):
+16 code sites,4 globals,1 vtable. Strict friend-only PE/signature checks retained.
+Skeleton/animator struct immediates remain consistent; all13 runtime fingerprints,
+rig/animset checks, matrix getter/setter targets and4 globals verified against
+actual new EXE. New standalone tools/verify_friend_profile.py checks exact SHA,
+all guards and64 native registrations;3 additional natives provided by RedHook.
+Legacy UI_SET_MONEY F71BD93A absent in friend EXE (other deprecated UI calls also
+removed): do not invoke it. Actual cash stat write/readback and native PRINT_MONEY
+are retained; honor and gameplay unchanged.13 RedHook exports, system DLLs only.
+
+All0.1.97 features preserved (en/ru UI, immediate recovery after loss, details,
+rebindings, random rest/bite/distance, animation/sound/grip).500-catch portable
+regressions, friend EXE verification, SDK compatibility, ZIP CRC and clean-source
+byte-identical rebuild pass. Old exe-specific verifier scripts are historical
+1.0.40 checks, explicitly documented; use new friend verifier for this target.
+Live1.0.42 execution/reward persistence require friend's runtime test; no RDR
+runtime in workspace. No change to user's baseline or original .97 archives.
