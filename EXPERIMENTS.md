@@ -342,3 +342,21 @@ only; actual recast mechanic intentionally awaits user's clip selection.
 Weight/keep/release/stow and0.1.85 earlier contact timings retained. SDK validation,
 10 real clip source mappings, portable tests, ZIPCRC/reproducible rebuild passed.
 No cloud game runtime. Main confirmed baseline0.1.78 remains unchanged.
+
+## 0.1.87 — retrieve4 and automatic hook5 integration
+
+User selected0.1.86 key4 lso/nor_lso_stn_mid_trw_suc for manual tackle retrieval,
+rod right, during Wait and Fight; also allow Bite. Fixed key4 starts isolated
+nonloop action. At phase0.25 discard current fish without catch credit, suppress
+respawn, return captured bobber/hook toward actual moving tip using smoothstep
+0.25–0.85 with0.6m arc. Finish Ready, ordinary E charge/recast available. No
+automatic cast. Failed startup before commit preserves current attempt.
+On actual Bite->Fight via E, play chosen key5 gent/lso_stn_tug before requesting
+normal fight pose. Game clock/tension/progress frozen during tug; after full
+playback resume existing .65 blend and .5238 fight hold. No preview keys remain
+except4 as real retrieval; no frame freezing in either action, camera free.
+Existing missing-only retries/scoped ownership retained. Exact selected mappings
+recorded in CONFIRMED_ITEM_ANIMATIONS.md. Portable tests cover allowed phases,
+indices/source keys, single retrieve commit/no hook commit, retract endpoints.
+SDK/asset checks, ZIPCRC/reproducible rebuild pass; game runtime visual validation
+awaits user. Main baseline0.1.78 remains unchanged.
