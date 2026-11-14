@@ -470,3 +470,23 @@ catches and mechanics. Static native ABI/cache/action-name checks, 65 SDK hashes
 11 loader exports, system DLL dependencies only. ZIP CRC and clean-source
 byte-identical rebuild pass. RDR not run here; new rewards and save/load behavior
 are not runtime-confirmed. Confirmed baseline 0.1.88 is preserved unchanged.
+
+## 0.1.93 — prevent revolver draw on RMB during fishing (2026-11-15)
+
+User reports native RMB draws revolver alongside rod in .92. Loader analysis
+shows RH_ActionDisable filters script action query natives, not every native
+player-controller path; previous .92 docs overstated input suppression.
+Add scoped ACTOR_START_FORCE_HOLSTER 7957CA4F(actor,1,0) before Equip and maintain
+force bit during fishing. ACTOR_END_FORCE_HOLSTER 231E7034 clears our lock at
+cleanup/stow/emergency/off-foot/death and detach. Previously existing force
+mode is preserved. No removed weapons, no hidden gun-only workaround, no repeated
+holster tasks every frame, no new camera control disable. Normal draw becomes
+available again after fishing. Mouse layout/rewards/animations otherwise unchanged.
+Readback follows distinct actor wrapper table2C36778 and entity table2C36768,
+ped+70 weapon controller, flag+48C. Native dispatch/callback ABI and bit20/40
+sets/AND9F release statically verified in supplied EXE. Runtime logs force
+readback/ownership changes. Tests cover 1000-frame non-repetition, lost lock,
+existing foreign mode, repeated cleanup, actor switch, unreadable state; prior
+mechanics/catch tests still pass. 67 SDK natives, 11 exact loader exports;
+ZIP CRC and clean-source byte-identical rebuild pass. In-game verification
+awaits user. Confirmed baseline0.1.88 preserved.
