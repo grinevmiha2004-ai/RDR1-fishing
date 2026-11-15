@@ -647,3 +647,23 @@ Validation: portable tests including2000 voice requests/failure recovery/zero-de
 and500 seeded catches; exact engine ABI signatures against supplied1.0.40 EXE;
 69 SDK natives/13 loader exports; x64 system-only dependencies; archive CRC and
 byte-identical clean-source rebuild. No game runtime available in cloud.
+
+## User confirmed0.1.98 baseline and friend port (2026-11-15)
+
+User reports no water audio bugs so far and explicitly promotes original0.1.98
+to primary working version. Updated WORKING_BASELINE.md and created
+baseline-v0.1.98 at original build ef1fb95. Original archives unchanged;
+0.1.97 baseline tag/archive retained.
+
+Separate0.1.98-RDR-1.0.42 ports owned-water lifecycle/zero-delta and unrestricted
+walking/mandatory-water changes to friend's supplied1.0.42.49788435 EXE.
+Prior21-address profile mapping retained. New creator80DCD0/wrapper80D550
+verified exactly, creator-inner call target83200 and stop8EEC0 independently
+resolved from unprotected callers. Low-function bodies protected on disk:
+3 exact loaded-code fingerprints remain mandatory before runtime calls.
+Static equivalence of protected bodies is not claimed; see NATIVE_NOTES.
+Missing UI_SET_MONEY still excluded, persistent cash/PRINT_MONEY/honor retained.
+
+Portable regressions incl2000 water requests/500 catches, exact friend EXE
+profile/call/native verification,68 SDK hashes/13 exports, archive CRC and
+clean-source byte-identical rebuild checked. No live RDR runtime here.
