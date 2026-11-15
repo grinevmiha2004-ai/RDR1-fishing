@@ -622,3 +622,28 @@ Tag baseline-v0.1.97 points to build commit6684c62, not friend's72f49a3.
 Original binary/source archives kept byte-for-byte, SHA256 recorded. Separate
 -RDR-1.0.42 port remains separate and is NOT the baseline. Previous tags/archives
 including baseline-v0.1.88 retained. Future experiments start from original.97.
+
+## v0.1.98: owned water voices and unrestricted walking (2026-11-15)
+
+Experimental successor to original user0.1.97 for RDR1.0.40; friend1.0.42
+port excluded. Confirmed baseline/tag/archive0.1.97 remain unchanged.
+
+Water playback now uses four stable plugin-owned voice references with verified
+engine create/stop/back-reference ABI, bypassing the script-context SoundID/group
+wrapper. Creation is checked instead of assuming success after a void request.
+Natural completion, failures, watchdog, pause, focus loss and hot unload clean up
+owned voices. Zero-delta clock frames no longer abort water sounds. Reel audio
+is unchanged. Existing clips, gain and game volume/spatialization are retained.
+User reports teleporting restores lost sounds; this does not prove a root cause.
+Water logs now include actual create result, failure reason and world position.
+Long same-location playback still requires user runtime testing.
+
+Removed two-metre movement cancellation. Actor origin follows walking/running,
+existing cast targets remain world-fixed. Every new cast must find actual water;
+legacy AutoWater/RequireWater switches cannot enable casting onto land.
+Death, leaving on-foot mode and manual F6 still stop fishing.
+
+Validation: portable tests including2000 voice requests/failure recovery/zero-delta
+and500 seeded catches; exact engine ABI signatures against supplied1.0.40 EXE;
+69 SDK natives/13 loader exports; x64 system-only dependencies; archive CRC and
+byte-identical clean-source rebuild. No game runtime available in cloud.
